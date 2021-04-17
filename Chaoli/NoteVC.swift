@@ -8,11 +8,19 @@
 import UIKit
 import YPImagePicker
 import SKPhotoBrowser
+import UITextView_Placeholder
+
 class NoteVC: UIViewController {
 
     var photos:[UIImage] = [] //model,用来存放用户添加的图片
     
     @IBOutlet weak var photoCollectionview: UICollectionView!
+
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var titleCountLabel: UILabel!
+    
+    @IBOutlet weak var textView: UITextView!
 
     var photonum: Int{
         return photos.count
@@ -20,8 +28,37 @@ class NoteVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleCountLabel.text = "\(KMaxnotetitlecount)"
+        photoCollectionview.dragInteractionEnabled = true
+        hideKeyboardWhenTappingAround() //点击空白处收起键盘
+        textView.placeholder = "请在这里输入具体的内容～"
+        
     }
 
+    @IBAction func DEOE(_ sender: Any) {
+    } //点击确定收起键盘
+    @IBAction func TFEditEnd(_ sender: Any) {
+        titleCountLabel.isHidden = true
+    }
+    @IBAction func TFEditBegin(_ sender: Any) {
+        titleCountLabel.isHidden = false
+    }
+    
+    @IBAction func TFEditChange(_ sender: Any) {
+        titleCountLabel.text = "\(KMaxnotetitlecount - titleTextField.unwrappedText.count)"
+    }
+}
+
+extension NoteVC: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if range.location >= KMaxnotetitlecount || (textField.unwrappedText.count + string.count) > KMaxnotetitlecount {
+            showTextHud("最多只可输入\(KMaxnotetitlecount)个字符哦～")
+            return false
+        }
+        return true
+    }
+    //限制用户最多输入XX个字符
 }
 
 extension NoteVC: UICollectionViewDataSource{

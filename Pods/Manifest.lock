@@ -3,6 +3,7 @@ PODS:
   - PryntTrimmerView (4.0.2)
   - SKPhotoBrowser (6.1.0)
   - SteviaLayout (4.7.3)
+  - "UITextView+Placeholder (1.4.0)"
   - XLPagerTabStrip (9.0.0)
   - YPImagePicker (4.5.0):
     - PryntTrimmerView (~> 4.0.2)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - MBProgressHUD (~> 1.2.0)
   - SKPhotoBrowser
+  - "UITextView+Placeholder"
   - XLPagerTabStrip (~> 9.0)
   - YPImagePicker
 
@@ -20,6 +22,7 @@ SPEC REPOS:
     - PryntTrimmerView
     - SKPhotoBrowser
     - SteviaLayout
+    - "UITextView+Placeholder"
     - XLPagerTabStrip
     - YPImagePicker
 
@@ -28,9 +31,10 @@ SPEC CHECKSUMS:
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: 4a4d5efb43aac6664fcdbfd09924b4ecb25bdf6b
+PODFILE CHECKSUM: f1c1df7571922478a62a676e45a5e71b9826457d
 
 COCOAPODS: 1.9.1

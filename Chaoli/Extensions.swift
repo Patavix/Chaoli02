@@ -7,6 +7,9 @@
 
 import UIKit
 
+extension UITextField{
+    var unwrappedText: String{ text ?? ""}
+}
 
 extension UIView{
     @IBInspectable
@@ -28,7 +31,17 @@ extension UIViewController{
         hud.mode = .text
         hud.label.text = title
         hud.detailsLabel.text = subtitle
-        hud.hide(animated: true, afterDelay: 2.5)
+        hud.hide(animated: true, afterDelay: 2)
+    }
+    
+    //点击空白处收起键盘
+    func hideKeyboardWhenTappingAround(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false //!!!不要覆盖其它控件的交互！
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard( ){
+        view.endEditing(true)
     }
 }
 

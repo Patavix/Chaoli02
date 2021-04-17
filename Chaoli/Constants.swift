@@ -20,3 +20,5 @@ let KNoteVCID = "NoteVCID"
 let KPhotoCellID = "PhotoCellID"
 let KPhotoFooterID = "PhotoFooterID"
 let KMaxphotonum = 3
+
+let KMaxnotetitlecount = 30

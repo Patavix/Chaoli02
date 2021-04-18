@@ -31,6 +31,7 @@
 		AE57AE7B2629DF9800B46E63 /* PhotoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE7A2629DF9800B46E63 /* PhotoFooter.swift */; };
 		AE57AE8B2629ED1600B46E63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE8A2629ED1600B46E63 /* Extensions.swift */; };
 		AED1E24C262ADC3300A21733 /* NoteVC-DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E24B262ADC3300A21733 /* NoteVC-DragDrop.swift */; };
+		AED1E281262C067600A21733 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E280262C067600A21733 /* ChannelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		AE57AE882629EC8200B46E63 /* Chaoli_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chaoli_Bridging_Header.h; sourceTree = "<group>"; };
 		AE57AE8A2629ED1600B46E63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AED1E24B262ADC3300A21733 /* NoteVC-DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC-DragDrop.swift"; sourceTree = "<group>"; };
+		AED1E280262C067600A21733 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				AE57AE2D2629CC4A00B46E63 /* SceneDelegate.swift */,
 				AE57AE2F2629CC4A00B46E63 /* ViewController.swift */,
 				AE57AE312629CC4A00B46E63 /* Main.storyboard */,
+				AED1E280262C067600A21733 /* ChannelVC.swift */,
 				AE57AE7D2629DFBF00B46E63 /* Post */,
 				AE57AE5E2629D20500B46E63 /* Home */,
 				AE57AE432629CCF500B46E63 /* TabBarC.swift */,
@@ -287,6 +290,7 @@
 				AE57AE562629D1C700B46E63 /* CorVC.swift in Sources */,
 				AE57AE592629D1D400B46E63 /* OthersVC.swift in Sources */,
 				AE57AE7B2629DF9800B46E63 /* PhotoFooter.swift in Sources */,
+				AED1E281262C067600A21733 /* ChannelVC.swift in Sources */,
 				AE57AE722629DEC300B46E63 /* PostVC.swift in Sources */,
 				AE57AE442629CCF500B46E63 /* TabBarC.swift in Sources */,
 				AE57AE4D2629D19600B46E63 /* ChemVC.swift in Sources */,

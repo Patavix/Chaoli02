@@ -15,10 +15,11 @@ let KBioVCID = "BioVCID"
 let KITVCID = "ITVCID"
 let KCorperationVCID = "CorVCID"
 let KNoteVCID = "NoteVCID"
-
+let KChannelTableVCID = "ChannelTableVCID"
+let KSubChannelCellID = "SubChannelCellID"
 
 let KPhotoCellID = "PhotoCellID"
 let KPhotoFooterID = "PhotoFooterID"
 let KMaxphotonum = 3
 
-let KMaxnotetitlecount = 30
+let KMaxnotetitlecount = 5

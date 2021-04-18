@@ -14,8 +14,10 @@ class NoteVC: UIViewController {
 
     var photos:[UIImage] = [] //model,用来存放用户添加的图片
     
+    @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var photoCollectionview: UICollectionView!
 
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var titleCountLabel: UILabel!
@@ -31,8 +33,24 @@ class NoteVC: UIViewController {
         titleCountLabel.text = "\(KMaxnotetitlecount)"
         photoCollectionview.dragInteractionEnabled = true
         hideKeyboardWhenTappingAround() //点击空白处收起键盘
-        textView.placeholder = "请在这里输入具体的内容～"
         
+        //改变Postbtn的样式 #a29bfe
+//        postButton.layer.borderWidth = 1
+//        saveBtn.layer.borderWidth = 1
+        
+        //改变textView的样式
+        textView.placeholder = "请在这里输入具体的内容～"
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        textView.textContainer.lineFragmentPadding = 0
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6 //输入文本的行间距
+        let typingAttributes:[NSAttributedString.Key: Any] = [
+            .paragraphStyle:paragraphStyle,
+            .font: UIFont.systemFont(ofSize: 16),
+            .foregroundColor: UIColor.label //重新设置字体的大小和颜色
+        ]
+        textView.typingAttributes = typingAttributes
+        textView.tintColorDidChange() //改变光标的颜色
     }
 
     @IBAction func DEOE(_ sender: Any) {
@@ -44,22 +62,48 @@ class NoteVC: UIViewController {
         titleCountLabel.isHidden = false
     }
     
+    
+    //修复中文输入的bug
     @IBAction func TFEditChange(_ sender: Any) {
+        
+        /**判断文字是否处于高亮状态，有高亮文本则return出去，不进行计数。即有高亮文本时，该函数只判断了一下，就执行完了。
+        而当文字没有高亮时（即文字已经确定输入到Text Field中了），此时titleTextField.markedTextRange == nil成立，继续执行后面的代码
+        */
+        guard titleTextField.markedTextRange == nil else {
+            return
+        }
+        
+        if titleTextField.unwrappedText.count > KMaxnotetitlecount {
+            titleTextField.text = String(titleTextField.unwrappedText.prefix(KMaxnotetitlecount)) //截取字符
+            showTextHud("最多只可输入\(KMaxnotetitlecount)个字符哦～")
+            DispatchQueue.main.async {
+                let  end = self.titleTextField.endOfDocument
+                self.titleTextField.selectedTextRange = self.titleTextField.textRange(from: end, to: end)
+                //将光标放在最后
+            }
+        }
         titleCountLabel.text = "\(KMaxnotetitlecount - titleTextField.unwrappedText.count)"
+        print(titleTextField.unwrappedText.count)
     }
 }
 
-extension NoteVC: UITextFieldDelegate{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
-    {
-        if range.location >= KMaxnotetitlecount || (textField.unwrappedText.count + string.count) > KMaxnotetitlecount {
-            showTextHud("最多只可输入\(KMaxnotetitlecount)个字符哦～")
-            return false
-        }
-        return true
-    }
-    //限制用户最多输入XX个字符
-}
+/**
+ 压缩优先级与拉伸优先级：
+        title（textfield）的拉伸优先级高（数值小），所以会先拉伸textfield，而字数（label）不被拉伸
+        title（textfield）的压缩优先级高（数值小），所以会先压缩textfield，而字数（label）不被压缩
+        这样就实现了字数这个label一直固定在标题框的右侧
+ */
+//限制用户最多输入XX个字符
+//extension NoteVC: UITextFieldDelegate{
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+//    {
+//        if range.location >= KMaxnotetitlecount || (textField.unwrappedText.count + string.count) > KMaxnotetitlecount {
+//            showTextHud("最多只可输入\(KMaxnotetitlecount)个字符哦～")
+//            return false
+//        }
+//        return true
+//    }
+//}
 
 extension NoteVC: UICollectionViewDataSource{
     
@@ -83,9 +127,13 @@ extension NoteVC: UICollectionViewDataSource{
         case UICollectionView.elementKindSectionFooter:
             let photoFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: KPhotoFooterID, for: indexPath) as! PhotoFooter  //返回photoFooter
             
-            photoFooter.addPhotoBtn.addTarget(self, action: #selector(addPhoto), for: .touchUpInside) //给btn添加点击事件
+            //给btn添加点击事件
+            photoFooter.addPhotoBtn.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+            
+            //设置btn样式
             photoFooter.addPhotoBtn.layer.borderWidth = 2
-            photoFooter.addPhotoBtn.layer.borderColor = UIColor.label.cgColor
+            photoFooter.addPhotoBtn.layer.borderColor = UIColor.tertiaryLabel.cgColor
+            
             return photoFooter
         default:
             return UICollectionReusableView() //返回空的

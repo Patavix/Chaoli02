@@ -220,21 +220,21 @@
                                                 </connections>
                                             </collectionView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5hk-8R-KI7">
-                                                <rect key="frame" x="16" y="122" width="382" height="416"/>
+                                                <rect key="frame" x="16" y="122" width="382" height="418.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MAp-rx-cgw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="363"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="365.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gC6-ia-YQo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="32.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cWG-87-dnj">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="23"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="25.5"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请在这里填写标题～" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="nec-Yk-lBL">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="23"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="25.5"/>
                                                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                 <textInputTraits key="textInputTraits" returnKeyType="done" smartInsertDeleteType="no"/>
                                                                                 <connections>
                                                                                     <action selector="DEOE:" destination="T12-iy-YcB" eventType="editingDidEndOnExit" id="CJe-CY-Oce"/>
@@ -245,7 +245,7 @@
                                                                                 </connections>
                                                                             </textField>
                                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-Fc-jSi">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="23"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="25.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                                                 <color key="highlightedColor" systemColor="tertiaryLabelColor"/>
@@ -253,7 +253,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km1-9V-PiB">
-                                                                        <rect key="frame" x="0.0" y="29" width="382" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="31.5" width="382" height="1"/>
                                                                         <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="HF3-Qw-4SW"/>
@@ -262,32 +262,32 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-Gc-CHt">
-                                                                <rect key="frame" x="0.0" y="46" width="382" height="317"/>
+                                                                <rect key="frame" x="0.0" y="48.5" width="382" height="317"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TW-Zq-bIT">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r40-ay-fPp" customClass="RichEditorView" customModule="RichEditorView">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="300"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="300" id="sOG-l3-Jn6"/>
+                                                                            <constraint firstAttribute="height" constant="300" id="eaB-LL-eEW"/>
                                                                         </constraints>
-                                                                        <color key="textColor" systemColor="labelColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                    </textView>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r40-ay-fPp">
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-CV-dDE">
                                                                         <rect key="frame" x="0.0" y="316" width="382" height="1"/>
                                                                         <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="pOL-1d-OD3"/>
+                                                                            <constraint firstAttribute="height" constant="1" id="q2P-5g-NQo"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="r40-ay-fPp" secondAttribute="trailing" id="8xv-jw-hH9"/>
+                                                                    <constraint firstItem="r40-ay-fPp" firstAttribute="leading" secondItem="PvP-Gc-CHt" secondAttribute="leading" id="b0y-L8-c9H"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-Wu-qDg">
-                                                        <rect key="frame" x="0.0" y="379" width="382" height="20"/>
+                                                        <rect key="frame" x="0.0" y="381.5" width="382" height="20"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="poE-Zk-46S">
                                                                 <rect key="frame" x="0.0" y="0.0" width="89" height="20"/>
@@ -330,7 +330,7 @@
                                                         </connections>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8q-XR-NK8">
-                                                        <rect key="frame" x="0.0" y="415" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="417.5" width="382" height="1"/>
                                                         <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="dTS-0u-rVe"/>
@@ -412,10 +412,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editorView" destination="r40-ay-fPp" id="fA9-uw-Ch2"/>
                         <outlet property="photoCollectionview" destination="gpC-l7-sKk" id="cz9-N7-1jO"/>
                         <outlet property="postButton" destination="joT-YK-Sao" id="CqN-BY-Kog"/>
                         <outlet property="saveBtn" destination="5Wk-4N-Iq8" id="Pmy-v5-Abg"/>
-                        <outlet property="textView" destination="6TW-Zq-bIT" id="mdR-aY-v4j"/>
                         <outlet property="titleCountLabel" destination="wRU-Fc-jSi" id="JSo-Dg-uIa"/>
                         <outlet property="titleTextField" destination="nec-Yk-lBL" id="sJq-iO-yEo"/>
                     </connections>

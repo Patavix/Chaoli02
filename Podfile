@@ -11,4 +11,5 @@ target 'Chaoli' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'SKPhotoBrowser'
   pod 'UITextView+Placeholder'
+  pod 'RichEditorView', :git => 'https://github.com/cbess/RichEditorView.git', :tag => '4.0'
 end

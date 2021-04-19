@@ -9,9 +9,11 @@ import UIKit
 import YPImagePicker
 import SKPhotoBrowser
 import UITextView_Placeholder
+import RichEditorView
 
 class NoteVC: UIViewController {
 
+    var inputcontent:String = "" //用来存放用户在“内容”中输入的文字
     var photos:[UIImage] = [] //model,用来存放用户添加的图片
     
     @IBOutlet weak var postButton: UIButton!
@@ -22,8 +24,22 @@ class NoteVC: UIViewController {
     
     @IBOutlet weak var titleCountLabel: UILabel!
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet var editorView: RichEditorView!
+    
+    var isTextColor = true
 
+    lazy var toolbar: RichEditorToolbar = {
+        let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
+        let options: [RichEditorDefaultOption] = [
+            .bold, .italic, .underline,
+            .unorderedList, .orderedList,
+            .indent, .outdent,
+            .undo, .redo,
+        ]
+        toolbar.options = options
+        return toolbar
+    }()
+    
     var photonum: Int{
         return photos.count
     }
@@ -34,23 +50,40 @@ class NoteVC: UIViewController {
         photoCollectionview.dragInteractionEnabled = true
         hideKeyboardWhenTappingAround() //点击空白处收起键盘
         
-        //改变Postbtn的样式 #a29bfe
-//        postButton.layer.borderWidth = 1
-//        saveBtn.layer.borderWidth = 1
+        editorView.delegate = self
+        editorView.inputAccessoryView = toolbar
+        editorView.tintColor = UIColor.secondaryLabel
+        editorView.placeholder = "请在这里输入具体的内容～"
+        
+//
+//        let html = "<b>Jesus is God.</b> He saves by grace through faith alone. Soli Deo gloria! <a href='https://perfectGod.com'>perfectGod.com</a>"
+//        editorView.reloadHTML(with: html)
+//
+        toolbar.delegate = self
+        toolbar.editor = editorView
+//
+        // This will create a custom action that clears all the input text when it is pressed
+//        let item = RichEditorOptionItem(title: "Clear") { (toolbar, sender) in
+//            toolbar.editor?.html = ""
+//        }
+//        var options = toolbar.options
+//        options.append(item)
+//        toolbar.options = options
+        
         
         //改变textView的样式
-        textView.placeholder = "请在这里输入具体的内容～"
-        textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        textView.textContainer.lineFragmentPadding = 0
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 6 //输入文本的行间距
-        let typingAttributes:[NSAttributedString.Key: Any] = [
-            .paragraphStyle:paragraphStyle,
-            .font: UIFont.systemFont(ofSize: 16),
-            .foregroundColor: UIColor.label //重新设置字体的大小和颜色
-        ]
-        textView.typingAttributes = typingAttributes
-        textView.tintColorDidChange() //改变光标的颜色
+//        textView.placeholder = "请在这里输入具体的内容～"
+//        textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        textView.textContainer.lineFragmentPadding = 0
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 6 //输入文本的行间距
+//        let typingAttributes:[NSAttributedString.Key: Any] = [
+//            .paragraphStyle:paragraphStyle,
+//            .font: UIFont.systemFont(ofSize: 16),
+//            .foregroundColor: UIColor.label //重新设置字体的大小和颜色
+//        ]
+//        textView.typingAttributes = typingAttributes
+//        textView.tintColorDidChange() //改变光标的颜色
     }
 
     @IBAction func DEOE(_ sender: Any) {
@@ -229,4 +262,46 @@ extension NoteVC{
             self.showTextHud("最多只可添加\(KMaxphotonum)张照片")
         }
     }
+}
+
+extension NoteVC: RichEditorDelegate {
+    func richEditor(_ editor: RichEditorView, heightDidChange height: Int) { }
+    
+    func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
+        if content.isEmpty {
+            inputcontent = "HTML Preview"
+            print(inputcontent)
+        } else {
+            inputcontent = content
+            print(inputcontent) //高亮的英文会打印2次，中文会打印3次，需要找到原因
+        }
+    }
+
+    func richEditorTookFocus(_ editor: RichEditorView) { }
+    
+    func richEditorLostFocus(_ editor: RichEditorView) { }
+    
+    func richEditorDidLoad(_ editor: RichEditorView) { }
+    
+    func richEditor(_ editor: RichEditorView, shouldInteractWith url: URL) -> Bool { return true }
+
+    func richEditor(_ editor: RichEditorView, handleCustomAction content: String) { }
+}
+
+extension NoteVC: RichEditorToolbarDelegate, UIColorPickerViewControllerDelegate {
+        
+    
+    func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar) {
+        toolbar.editor?.insertImage("https://avatars2.githubusercontent.com/u/10981?s=60", alt: "Gravatar")
+    }
+
+    func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
+        // Can only add links to selected text, so make sure there is a range selection first
+        toolbar.editor?.hasRangeSelection(handler: { (hasSelection) in
+            if hasSelection {
+                self.toolbar.editor?.insertLink("https://github.com/cbess/RichEditorView", title: "GitHub Link")
+            }
+        })
+    }
+    
 }

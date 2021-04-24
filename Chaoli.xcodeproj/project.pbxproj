@@ -10,7 +10,6 @@
 		73598D9F382F93333AA8FA38 /* Pods_Chaoli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31124A1BC0246CC1CB95EFC0 /* Pods_Chaoli.framework */; };
 		AE57AE2C2629CC4A00B46E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE2B2629CC4A00B46E63 /* AppDelegate.swift */; };
 		AE57AE2E2629CC4A00B46E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE2D2629CC4A00B46E63 /* SceneDelegate.swift */; };
-		AE57AE302629CC4A00B46E63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE2F2629CC4A00B46E63 /* ViewController.swift */; };
 		AE57AE332629CC4A00B46E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE57AE312629CC4A00B46E63 /* Main.storyboard */; };
 		AE57AE362629CC4A00B46E63 /* Chaoli.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE342629CC4A00B46E63 /* Chaoli.xcdatamodeld */; };
 		AE57AE382629CC4C00B46E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE57AE372629CC4C00B46E63 /* Assets.xcassets */; };
@@ -32,6 +31,9 @@
 		AE57AE8B2629ED1600B46E63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57AE8A2629ED1600B46E63 /* Extensions.swift */; };
 		AED1E24C262ADC3300A21733 /* NoteVC-DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E24B262ADC3300A21733 /* NoteVC-DragDrop.swift */; };
 		AED1E281262C067600A21733 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E280262C067600A21733 /* ChannelVC.swift */; };
+		AED1E2972634307000A21733 /* RecomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E2962634307000A21733 /* RecomVC.swift */; };
+		AED1E29B2634327500A21733 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E29A2634327500A21733 /* MessageVC.swift */; };
+		AED1E29F263432DE00A21733 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1E29E263432DE00A21733 /* MeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,6 @@
 		AE57AE282629CC4A00B46E63 /* Chaoli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaoli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE57AE2B2629CC4A00B46E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE57AE2D2629CC4A00B46E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE57AE2F2629CC4A00B46E63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE57AE322629CC4A00B46E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE57AE352629CC4A00B46E63 /* Chaoli.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chaoli.xcdatamodel; sourceTree = "<group>"; };
 		AE57AE372629CC4C00B46E63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		AE57AE8A2629ED1600B46E63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AED1E24B262ADC3300A21733 /* NoteVC-DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteVC-DragDrop.swift"; sourceTree = "<group>"; };
 		AED1E280262C067600A21733 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		AED1E2962634307000A21733 /* RecomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomVC.swift; sourceTree = "<group>"; };
+		AED1E29A2634327500A21733 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		AED1E29E263432DE00A21733 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,7 @@
 			children = (
 				AE57AE2B2629CC4A00B46E63 /* AppDelegate.swift */,
 				AE57AE2D2629CC4A00B46E63 /* SceneDelegate.swift */,
-				AE57AE2F2629CC4A00B46E63 /* ViewController.swift */,
+				AED1E2992634324600A21733 /* TabBarItem */,
 				AE57AE312629CC4A00B46E63 /* Main.storyboard */,
 				AED1E280262C067600A21733 /* ChannelVC.swift */,
 				AE57AE7D2629DFBF00B46E63 /* Post */,
@@ -144,6 +148,16 @@
 				AED1E24B262ADC3300A21733 /* NoteVC-DragDrop.swift */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		AED1E2992634324600A21733 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				AED1E2962634307000A21733 /* RecomVC.swift */,
+				AED1E29A2634327500A21733 /* MessageVC.swift */,
+				AED1E29E263432DE00A21733 /* MeVC.swift */,
+			);
+			name = TabBarItem;
 			sourceTree = "<group>";
 		};
 		CE0F48126BEE7885E53A5E13 /* Pods */ = {
@@ -277,7 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE57AE302629CC4A00B46E63 /* ViewController.swift in Sources */,
+				AED1E29F263432DE00A21733 /* MeVC.swift in Sources */,
+				AED1E29B2634327500A21733 /* MessageVC.swift in Sources */,
 				AE57AE502629D1A200B46E63 /* BioVC.swift in Sources */,
 				AE57AE4A2629D18800B46E63 /* PhyVC.swift in Sources */,
 				AE57AE2C2629CC4A00B46E63 /* AppDelegate.swift in Sources */,
@@ -294,6 +309,7 @@
 				AE57AE722629DEC300B46E63 /* PostVC.swift in Sources */,
 				AE57AE442629CCF500B46E63 /* TabBarC.swift in Sources */,
 				AE57AE4D2629D19600B46E63 /* ChemVC.swift in Sources */,
+				AED1E2972634307000A21733 /* RecomVC.swift in Sources */,
 				AE57AE682629DB3300B46E63 /* Constants.swift in Sources */,
 				AE57AE2E2629CC4A00B46E63 /* SceneDelegate.swift in Sources */,
 				AE57AE362629CC4A00B46E63 /* Chaoli.xcdatamodeld in Sources */,

@@ -13,14 +13,14 @@
         <!--我的-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chaoli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MeVC" customModule="Chaoli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" image="person.fill" catalog="system" id="RSX-aq-lre"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="我的" image="person.fill" catalog="system" id="RSX-aq-lre"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,14 +29,14 @@
         <!--消息-->
         <scene sceneID="yQn-Vl-tGp">
             <objects>
-                <viewController id="Qjw-hm-4tx" sceneMemberID="viewController">
+                <viewController id="Qjw-hm-4tx" customClass="MessageVC" customModule="Chaoli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r18-4t-ble">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MG2-wE-7GW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息" image="message.fill" catalog="system" id="zSx-AO-gJ8"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="消息" image="message.fill" catalog="system" id="zSx-AO-gJ8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5M-2G-jfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,14 +45,14 @@
         <!--推荐-->
         <scene sceneID="eda-LF-YDe">
             <objects>
-                <viewController id="NdQ-rU-CSU" sceneMemberID="viewController">
+                <viewController id="NdQ-rU-CSU" customClass="RecomVC" customModule="Chaoli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y3D-ke-Utj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="yYX-rG-3PA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="推荐" image="wand.and.rays" catalog="system" id="9TO-27-c00"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="推荐" image="wand.and.rays" catalog="system" id="9TO-27-c00"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nf-sQ-Nq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +118,7 @@
                         <viewLayoutGuide key="safeArea" id="jkl-b4-SPd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="发布" image="plus.rectangle.fill" catalog="system" id="Nfa-xU-q9v"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="发布" image="plus.rectangle.fill" catalog="system" id="Nfa-xU-q9v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd9-1T-Pu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
